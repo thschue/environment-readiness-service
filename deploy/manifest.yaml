@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: environment-readiness-service
+  name: environment-readiness-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: environment-readiness-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: environment-readiness-service
+    spec:
+      containers:
+      - image: ghcr.io/thschue/environment-readiness-service:v0.0.1 #x-release-please-version
+        name: environment-readiness-service
+        resources: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: environment-readiness-service
+  name: environment-readiness-service
+spec:
+    ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+        app: environment-readiness-service
+    type: ClusterIP
