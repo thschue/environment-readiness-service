@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.2](https://github.com/thschue/environment-readiness-service/compare/v0.0.1...v0.0.2) (2023-04-14)
+
+
+### Features
+
+* add kubernetes manifest ([8e95070](https://github.com/thschue/environment-readiness-service/commit/8e95070334840162a1534c5da2165c85da892f24))
+* change to relative backend path ([a5ec038](https://github.com/thschue/environment-readiness-service/commit/a5ec03858f2dd236062bec9b81eccefeb023ba05))
+* retrying programmatically ([49813fa](https://github.com/thschue/environment-readiness-service/commit/49813fa752254389ebf6ee48405893f38f295dea))
+
+
+### Bug Fixes
+
+* style issues ([d7b883b](https://github.com/thschue/environment-readiness-service/commit/d7b883bf528de727b1e2ad067f8e972078743056))
+
 ## [0.0.1](https://github.com/thschue/environment-readiness-service/compare/v0.0.1...v0.0.1) (2023-04-14)
 
 
