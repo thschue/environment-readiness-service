@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Hello KubeCon!</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/podtato.css"/>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/custom.css"/>
+</head>
+
+{{ if eq .InfrastructureState "ready" }}
+
+{{ else }}
+<script>
+    let ready = true
+</script>
+{{ end }}
+
+<body style="background-color: #849abd;color: #faebd7;">
+
+<main class="container">
+    <div class="topnav">
+        <img src="https://events.linuxfoundation.org/wp-content/uploads/2022/05/kccnc-eu-2023-logos-black.svg" height="75%" width="75%">
+    </div>
+    <div class="text-center">
+        <br />
+        <h1>Infrastructure-Status:<br />{{ .InfrastructureState }}</h1>
+        <br />
+        {{ if eq .InfrastructureState "Ready" }}
+        <img src="assets/img/ready.png" height="200" width="200">
+        <br />
+        <input type="radio" onclick="proceed()" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+        <label class="btn btn-outline-danger" for="danger-outlined">Enable Maintenance Mode</label>
+        <script>
+            ready = false
+        </script>
+        {{ else }}
+        <script>
+            ready = true
+        </script>
+        <img src="assets/img/notready.png" height="200" width="200">
+        <br />
+        <input type="radio" onclick="proceed()" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+        <label class="btn btn-outline-success" for="success-outlined">Disable Maintenance Mode</label>
+        {{ end }}
+    </div>
+</main>
+<script>
+    function proceed () {
+        fetch('http://localhost:8080/infraReadiness', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "ready":    ready
+            })
+        }).then(function (response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+            }
+            response.json().then(function (data) {
+                console.log(data);
+            });
+        })
+        window.location.reload();
+    }
+</script>
+</body>
+</html>
