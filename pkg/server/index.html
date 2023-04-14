@@ -19,7 +19,7 @@
 
 <main class="container">
     <div class="topnav">
-        <img src="https://events.linuxfoundation.org/wp-content/uploads/2022/05/kccnc-eu-2023-logos-black.svg" height="75%" width="75%">
+        <img src="assets/img/kccnc-eu-2023-logos-black.svg" height="75%" width="75%">
     </div>
     <div class="text-center">
         <br />
@@ -46,7 +46,7 @@
 </main>
 <script>
     function proceed () {
-        fetch('http://localhost:8080/infraReadiness', {
+        fetch('/infraReadiness', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
