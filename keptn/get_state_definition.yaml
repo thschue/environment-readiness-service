@@ -8,4 +8,4 @@ spec:
       url: https://raw.githubusercontent.com/thschue/environment-readiness-service/main/keptn/get_state.ts
     parameters:
       map:
-        url: http://environment-readiness-service.default.svc.cluster.local:8080
+        url: http://environment-readiness-service.default.svc.cluster.local:8080/infraReadiness
