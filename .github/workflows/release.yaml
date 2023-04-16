@@ -42,7 +42,7 @@ jobs:
       packages: write
       id-token: write
     env:
-      IMAGE_TAG: ghcr.io/thschue/environment-readiness-service:${{ needs.release-please.outputs.tag_name }}
+      IMAGE_TAG: ghcr.io/on-clouds/environment-readiness-service:${{ needs.release-please.outputs.tag_name }}
       IMAGE_NAME: environment-readiness-service
     steps:
       - name: Checkout
