@@ -21,14 +21,14 @@ export function setContext() {
 
     return [ params, context ];
 }
-export async function sendEvent(url: string, context: any, result: string, success: boolean) {
+export async function sendEvent(url: string, context: any, eventtype: string, result: string, success: boolean) {
     let event = {
         "app": context.app,
         "workload": context.workload,
         "appVersion": context.appVersion,
         "workloadVersion": context.workloadVersion,
         "result": result,
-        "eventType": context.eventType
+        "eventType": eventtype,
     }
 
     const response = await fetch(url, {
