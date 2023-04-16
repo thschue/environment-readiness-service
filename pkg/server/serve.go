@@ -68,6 +68,7 @@ type RegistrationPost struct {
 
 type EventPost struct {
 	Timestamp       string `json:"timestamp"`
+	EventType       string `json:"eventType"`
 	App             string `json:"app"`
 	Workload        string `json:"workload"`
 	AppVersion      string `json:"appVersion"`
@@ -191,9 +192,11 @@ func (s *Config) webHandler(w http.ResponseWriter, r *http.Request) {
 	data := struct {
 		InfrastructureState string
 		WelcomeMessage      string
+		Events              []EventPost
 	}{
 		InfrastructureState: status,
 		WelcomeMessage:      "Hello KubeCon",
+		Events:              events,
 	}
 
 	tpl, err := template.New("index").Parse(indexTemplate)

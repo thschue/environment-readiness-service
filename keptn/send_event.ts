@@ -26,6 +26,7 @@ let event = {
     "appVersion": context.appVersion,
     "workloadVersion": context.workloadVersion,
     "result": result,
+    "eventType": context.eventType
 }
 
 let response = await fetch(url, {

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./assets/css/custom.css"/>
 </head>
 
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
 {{ if eq .InfrastructureState "ready" }}
 
 {{ else }}
@@ -42,6 +49,31 @@
         <input type="radio" onclick="proceed()" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
         <label class="btn btn-outline-success" for="success-outlined">Disable Maintenance Mode</label>
         {{ end }}
+        <br />
+        <br />
+        <details>
+            <summary>Latest Events</summary>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Timestamp</th>
+                <th scope="col">App</th>
+                <th scope="col">Version</th>
+                <th scope="col">Event</th>
+            </tr>
+            </thead>
+            <tbody>
+        {{ range .Events }}
+        <tr>
+            <td width="150"><b>{{ .Timestamp }}</b></td>
+            <td width="100">{{ .App }} {{ .AppVersion }}</td>
+            <td width="100">{{ .Workload }} {{ .WorkloadVersion}} </td>
+            <td width="150"><a href="#" data-mdb-toggle="tooltip" title="{{ .Result }}">{{ .EventType }}</a> </td>
+        </tr>
+        {{ end }}
+            </tbody>
+        </table>
+        </details>
     </div>
 </main>
 <script>

@@ -59,6 +59,7 @@ table {
   margin: 0;
   padding: 0;
   text-align: center;
+  font-size: 12px;
 }
 
 table.center {
@@ -66,6 +67,9 @@ table.center {
   margin-right:auto;
 }
 
+td {
+  vertical-align: top;
+}
 td.left {
   width: 200px;
   text-align: left;
@@ -90,4 +94,14 @@ td.right {
 .topnav.img {
   height: 150px;
   width: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #0f5132;
+  text-decoration: underline;
 }
