@@ -1,6 +1,6 @@
 package main
 
-import "github.com/thschue/environment-readiness-service/pkg/server"
+import "github.com/on-clouds/environment-readiness-service/pkg/server"
 
 func main() {
 	serv := server.Config{

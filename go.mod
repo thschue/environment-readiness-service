@@ -1,4 +1,4 @@
-module github.com/thschue/environment-readiness-service
+module github.com/on-clouds/environment-readiness-service
 
 go 1.20
 
