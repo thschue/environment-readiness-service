@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.4](https://github.com/thschue/environment-readiness-service/compare/v0.0.3...v0.0.4) (2023-04-16)
+
+
+### Features
+
+* add keptn library ([eb566f8](https://github.com/thschue/environment-readiness-service/commit/eb566f845a9e59b1b0b4c5202df06e6a49a6d78a))
+* add new keptn library ([44ff635](https://github.com/thschue/environment-readiness-service/commit/44ff635d2c876f54127fff01984fb55e53cbf3bc))
+* add new keptn library ([7e64190](https://github.com/thschue/environment-readiness-service/commit/7e641908e75f42702eef1a93289bf62100d7750a))
+
 ## [0.0.3](https://github.com/thschue/environment-readiness-service/compare/v0.0.2...v0.0.3) (2023-04-16)
 
 
