@@ -8,6 +8,7 @@ import (
 	"github.com/fatih/color"
 	"html/template"
 	"net/http"
+	"time"
 )
 
 //go:embed index.html
@@ -64,6 +65,17 @@ type RegistrationPost struct {
 	App      AppRegistration      `json:"app"`
 	Workload WorkloadRegistration `json:"workload"`
 }
+
+type EventPost struct {
+	Timestamp       string `json:"timestamp"`
+	App             string `json:"app"`
+	Workload        string `json:"workload"`
+	AppVersion      string `json:"appVersion"`
+	WorkloadVersion string `json:"workloadVersion"`
+	Result          string `json:"result"`
+}
+
+var events = []EventPost{}
 
 func (s *Config) healthzHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "OK")
@@ -144,7 +156,28 @@ func (s *Config) readinessHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		infra.Ready = p.Ready
 	}
+}
 
+func (s *Config) eventHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "GET":
+		js, err := json.MarshalIndent(events, "", "  ")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(js)
+	case "POST":
+		var p EventPost
+		err := json.NewDecoder(r.Body).Decode(&p)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		p.Timestamp = time.Now().Format(time.RFC3339)
+		events = append(events, p)
+	}
 }
 
 func (s *Config) webHandler(w http.ResponseWriter, r *http.Request) {
@@ -182,6 +215,7 @@ func (s *Config) Serve() error {
 	mux.HandleFunc("/infraReadiness", s.readinessHandler)
 	mux.HandleFunc("/register", s.registrationHandler)
 	mux.HandleFunc("/healthz", s.healthzHandler)
+	mux.HandleFunc("/event", s.eventHandler)
 	mux.HandleFunc("/web", s.webHandler)
 	mux.Handle("/assets/", assetsFs)
 	color.Green("Starting server on port %s", s.Port)
