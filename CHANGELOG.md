@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/thschue/environment-readiness-service/compare/v0.0.4...v0.0.5) (2023-04-16)
+
+
+### Features
+
+* updated naming ([df305de](https://github.com/thschue/environment-readiness-service/commit/df305de00208f95c8125106549c64fd79cb9f9f2))
+
 ## [0.0.4](https://github.com/thschue/environment-readiness-service/compare/v0.0.3...v0.0.4) (2023-04-16)
 
 
