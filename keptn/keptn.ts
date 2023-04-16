@@ -23,8 +23,8 @@ export function setContext() {
 }
 export async function sendEvent(url: string, context: any, eventtype: string, result: string, success: boolean) {
     let event = {
-        "app": context.app,
-        "workload": context.workload,
+        "app": context.appName,
+        "workload": context.workloadName,
         "appVersion": context.appVersion,
         "workloadVersion": context.workloadVersion,
         "result": result,
