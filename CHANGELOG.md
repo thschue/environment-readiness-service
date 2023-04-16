@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.6](https://github.com/on-clouds/environment-readiness-service/compare/v0.0.5...v0.0.6) (2023-04-16)
+
+
+### Features
+
+* change references to on-clouds ([bf141d6](https://github.com/on-clouds/environment-readiness-service/commit/bf141d67e674218d5bf10b76eebf523f68a74df3))
+* change references to on-clouds ([11934e8](https://github.com/on-clouds/environment-readiness-service/commit/11934e8765c60799b804e99ffab636bd4a7c4057))
+* enable renovate ([a170f55](https://github.com/on-clouds/environment-readiness-service/commit/a170f5599a5fd0bf81e7aaf9f624a94ec79b1a03))
+* update references ([133aba0](https://github.com/on-clouds/environment-readiness-service/commit/133aba0636dcc430422c93cad9da4b09ce79d71d))
+
 ## [0.0.5](https://github.com/thschue/environment-readiness-service/compare/v0.0.4...v0.0.5) (2023-04-16)
 
 
