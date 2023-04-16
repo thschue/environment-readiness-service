@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.3](https://github.com/thschue/environment-readiness-service/compare/v0.0.2...v0.0.3) (2023-04-16)
+
+
+### Features
+
+* add event handling ([2adab03](https://github.com/thschue/environment-readiness-service/commit/2adab03272b6e68f2ae3002a4b8e0624160947a2))
+* add results ([a9919a3](https://github.com/thschue/environment-readiness-service/commit/a9919a3193e2e9a0f44b9ef1473c9cafc2e29b40))
+
 ## [0.0.2](https://github.com/thschue/environment-readiness-service/compare/v0.0.1...v0.0.2) (2023-04-14)
 
 
