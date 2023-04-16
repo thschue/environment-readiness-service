@@ -1,6 +1,6 @@
 // Description: This function triggers a github action
 // Get Keptn context and variables
-export function setContext(): [any, any] {
+export function setContext() {
     let params_raw = Deno.env.get("DATA");
     let context_raw = Deno.env.get("CONTEXT");
     let params;
@@ -12,10 +12,16 @@ export function setContext(): [any, any] {
 
     if (context_raw != undefined) {
         context = JSON.parse(context_raw);
+    } else {
+        console.log("Context is not set - exiting")
+        Deno.exit(1);
     }
-    return params, context;
+
+    console.log(context);
+
+    return [ params, context ];
 }
-export function sendEvent(url: string, context: any, result: string) {
+export async function sendEvent(url: string, context: any, result: string, success: boolean) {
     let event = {
         "app": context.app,
         "workload": context.workload,
@@ -25,11 +31,17 @@ export function sendEvent(url: string, context: any, result: string) {
         "eventType": context.eventType
     }
 
-    fetch(url, {
+    const response = await fetch(url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(event),
     })
+
+    console.log(JSON.stringify(event))
+    if (success) {
+        Deno.exit(0);
+    }
+    Deno.exit(1);
 }
