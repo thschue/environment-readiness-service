@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.7](https://github.com/on-clouds/environment-readiness-service/compare/v0.0.6...v0.0.7) (2023-05-24)
+
+
+### Features
+
+* update for devopspro ([675ee02](https://github.com/on-clouds/environment-readiness-service/commit/675ee02e6cb65b292db869e65b63c478d6ebc54f))
+
+
+### Other
+
+* **deps:** update anchore/sbom-action action to v0.14.2 ([a45770d](https://github.com/on-clouds/environment-readiness-service/commit/a45770dadf32991f89c5ccceb0e9352b6f350d80))
+* **deps:** update golang docker tag to v1.20.4 ([550d72b](https://github.com/on-clouds/environment-readiness-service/commit/550d72b4a3728fc24b3b330330e8d48ff26979d5))
+
 ## [0.0.6](https://github.com/on-clouds/environment-readiness-service/compare/v0.0.5...v0.0.6) (2023-04-16)
 
 
