@@ -2,7 +2,7 @@
 // Get Keptn context and variables
 export function setContext() {
     let params_raw = Deno.env.get("DATA");
-    let context_raw = Deno.env.get("CONTEXT");
+    let context_raw = Deno.env.get("KEPTN_CONTEXT");
     let params;
     let context;
 
