@@ -3,7 +3,7 @@
 import { sleep } from "https://deno.land/x/sleep/mod.ts";
 
 let params_raw = Deno.env.get("DATA");
-let context = Deno.env.get("CONTEXT");
+let context = Deno.env.get("KEPTN_CONTEXT");
 let params;
 
 if (params_raw != undefined) {
