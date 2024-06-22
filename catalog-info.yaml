@@ -6,6 +6,8 @@ metadata:
   tags:
     - keptn
     - golang
+  annotations:
+    github.com/project-slug: 'on-clouds/environment-readiness-service'
 spec:
   type: service
   lifecycle: experimental
