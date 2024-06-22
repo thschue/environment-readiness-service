@@ -2,11 +2,12 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: environment-readiness-service
-  description: |
-    The Environment Readiness Service is an example service for demonstrating capabilities of the Keptn Lifecycle Toolkit
-  annotations:
-    github.com/project-slug: on-clouds/environment-readiness-service
-    backstage.io/techdocs-ref: dir:.
+  description: Environment Readiness Service
+  tags:
+    - keptn
+    - golang
 spec:
   type: service
+  lifecycle: experimental
   owner: platform-team
+  system: environment-readiness-service
