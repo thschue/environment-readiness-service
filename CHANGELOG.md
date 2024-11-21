@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.8](https://github.com/on-clouds/environment-readiness-service/compare/v0.0.7...v0.0.8) (2024-06-22)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/fatih/color to v1.17.0 ([1ba95fc](https://github.com/on-clouds/environment-readiness-service/commit/1ba95fc929bea8913240d9c228e838e20666733f))
+
+
+### Other
+
+* **deps:** update anchore/sbom-action action to v0.14.3 ([960243b](https://github.com/on-clouds/environment-readiness-service/commit/960243b52e4ad6672268c65cd5eb2bae98d53490))
+* **deps:** update anchore/sbom-action action to v0.16.0 ([ebfe783](https://github.com/on-clouds/environment-readiness-service/commit/ebfe783af4565df8600f3881b047753ee4705695))
+
 ## [0.0.7](https://github.com/on-clouds/environment-readiness-service/compare/v0.0.6...v0.0.7) (2023-05-24)
 
 
